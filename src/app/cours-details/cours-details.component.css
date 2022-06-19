@@ -1,0 +1,13 @@
+.mycol{
+  border-radius: 10px;
+  /*border: solid 2px;*/
+}
+
+img{
+  border:2px solid;
+  border-radius: 5px;
+}
+
+.myDetails{
+  font-size:x-large;
+}

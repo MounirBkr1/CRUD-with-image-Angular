@@ -1,0 +1,13 @@
+.my-titre{
+  font-family: Algerian;
+  color: darkblue;
+  border: solid 1px black;
+  margin:20px;
+  border-radius: 15px;
+
+}
+.my-list{
+  border: solid 1px black;
+  padding: 30px;
+  border-radius: 5px;
+}

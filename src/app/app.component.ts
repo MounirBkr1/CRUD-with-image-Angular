@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cours-management-front';
+  title = 'GESTION DES COURS APPLICATION SPRING BOOT & ANGULAR';
 }

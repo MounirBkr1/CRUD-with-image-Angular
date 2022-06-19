@@ -1,0 +1,34 @@
+
+<h2 class="mb-4 d-flex justify-content-center">Les Details du Cours:  <b style="color: blue"> {{cour.title | uppercase}}</b></h2>
+<br>
+<br>
+
+<div class="row mt-4 myDetails">
+  <div class="col-md-5 mycol">
+    <div class="mb-4">
+      <label ><b>Title : </b></label>  <b class="ms-2" style="color: blue"> {{cour.title}}</b>
+    </div>
+    <div class="mb-4 mt-4">
+      <label for=""><b>price : </b></label> <b class="ms-2" style="color: blue"> {{cour.price}}</b>
+    </div>
+    <div class="mb-4">
+      <label for=""><b>contenu : </b></label> <b class="ms-2" style="color: blue"> {{cour.content}} </b>
+    </div>
+  </div>
+  <div class="col-md-7 mycol">
+    <div>
+      <label for=""><b>image : </b></label>
+    </div>
+    <div class="d-flex justify-content-end">
+      <img src="{{this.coursService.baseUrl+'photoCours/'+cour.id}}" alt="{{cour.image}}" width="500px" height="300px"
+           >
+    </div>
+
+
+
+  </div>
+
+</div>
+<div class="d-flex justify-content-end mt-4">
+  <button class="btn btn-info " (click)="goToList()">retour</button>
+</div>
