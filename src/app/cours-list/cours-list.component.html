@@ -1,0 +1,59 @@
+<h2>Liste Des Cours</h2>
+<div class="my-4 d-flex justify-content-end">
+  <button class="btn btn-success align-middle" (click)="addNewCours()">
+    <i class="fa-solid fa-file-circle-plus me-2"></i>
+    <b>Add Cours</b>
+  </button>
+
+</div>
+<div class="my-4">
+  <label for="">Search:</label>
+  <input
+    type="text"
+    (keyup)="searchCours()"
+    [(ngModel)]="searchText"
+    placeholder="cherchez un cours"
+    class="form-control mb-2"
+  />
+  <p>Le cours recherché :  <b style="color: blue">{{searchText}} </b></p>
+</div>
+
+<div>
+  <table class="table table-striped mt-4">
+    <thead>
+    <tr >
+      <th >ID</th>
+      <th>TITRE</th>
+      <th>PRICE</th>
+      <th>CONTENT</th>
+      <th>IMAGE</th>
+      <th>ACTIONS</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cour of resultsSearch">
+      <td>{{cour.id}}</td>
+      <td>{{cour.title}}</td>
+      <td>{{cour.price}}</td>
+      <td>{{cour.content}}</td>
+<!--      pas d'id =il faut demander a spring d exposer l'id-->
+      <td>
+        <img src="{{this.coursService.baseUrl+'photoCours/'+cour.id }}" alt="{{cour.image}}" width="80px" height="50px">
+<!--        <img src="assets/photos/js.png" alt="" height="100px" width="100px">-->
+      </td>
+
+      <td>
+        <button class="btn btn-sm btn-info" (click)="seeCoursDetails(cour.id)" >
+          <i class="fa fa-search" ></i>Details</button>
+        <button class="btn btn-sm btn-warning" (click)="updateCours(cour.id)" >
+          <i class="fa fa-edit"  ></i>Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteCours(cour.id)">
+          <i class="fa fa-remove"  ></i>Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+

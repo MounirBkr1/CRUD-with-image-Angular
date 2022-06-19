@@ -1,0 +1,68 @@
+<h3>Creer un Cours</h3>
+
+
+<form (ngSubmit)="onSubmit()">
+
+  <div class="form-group">
+    <label>title</label>
+    <input type="text" class="form-control" id="title"
+           [(ngModel)]="cour.title" name="title" placeholder="entrer le titre du cours">
+  </div>
+  <div class="form-group">
+    <label for="">Price: </label>
+    <input type="text" class="form-control" id="price"
+           [(ngModel)]="cour.price" name="price" placeholder="0.00 $">
+  </div>
+  <div class="form-group">
+    <label for="">Content:</label>
+    <input type="text" class="form-control" id="content"
+           [(ngModel)]="cour.content" name="content" placeholder="entrer le contenu du cours">
+  </div>
+  <div class="form-group">
+    <label for="">Nom Image:</label>
+    <input type="text" class="form-control" id="image"
+           [(ngModel)]="selectedFileName"  name="image" placeholder="nom de l'image" readonly>
+  </div>
+
+
+<!--  ADDED-->
+  <div class="container row">
+    <div class="col-md-12">
+      <h1>Upload Image</h1>
+    </div>
+  </div>
+
+
+
+
+<!--  IMAGE-->
+  <div class="container row">
+    <div class="col-md-6">
+      <input type="file"
+             id="file" (change)="onFileSelected($event)">
+
+    </div>
+    <div class="col-md-6">
+      <button type="button" (click)="onUpload()"> upload </button>
+    </div>
+  </div>
+<!--  fin image-->
+
+  <hr />
+  <div class="container row">
+    <div class="col-md-12">
+      <div *ngIf=message>{{message}}</div>
+    </div>
+  </div>
+
+
+
+
+<!--  fin added image-->
+
+
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-success mt-2 " type="submit">Enregistrer</button>
+
+  </div>
+</form>
